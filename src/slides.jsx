@@ -167,7 +167,7 @@ export const slides = [
               <div className="band-left">
                 <div className="icon-card has-img">
                   <img
-                    src="/img/slide3_wave-detector.svg"
+                    src="/img/slide3_wave-detector.png"
                     alt="Wave to detector measurement icon"
                     className="media-img"
                   />
