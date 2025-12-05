@@ -271,6 +271,22 @@ body,
   flex: 1;
 }
 
+/* Fix for Slide 3 Footer Overlap */
+.slide-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-3 .footline {
+  position: relative; /* Unsticks it from the absolute bottom */
+  bottom: auto;
+  left: auto;
+  margin-top: auto;   /* Pushes it to the bottom naturally */
+  padding-top: 20px;  /* Adds breathing room from the equation */
+  text-align: center; /* Optional: centers it since it's now relative */
+  width: 100%;
+}
+
 /* Density matrix styling */
 .matrix-card {
   position: relative;
