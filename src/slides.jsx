@@ -409,28 +409,25 @@ export const slides = [
   // SLIDE 7 – Research Question
   {
     id: 7,
-    maxStep: 2,
+    maxStep: 1, // Reduced step count since we removed the footer
     render(step) {
       return (
         <div className="slide-7">
           <div className="slide-title-block">
             <h1 className={`slide-title ${step >= 1 ? 'fade-in' : 'hidden'}`}>
-              Research Question: Physics-Grounded Quantum Walk
+              Research Question
             </h1>
           </div>
 
           <div className={`rq-callout ${step >= 1 ? 'zoom-in' : 'hidden'}`}>
             <p>
-              <strong>RQ:</strong> Can a physics-grounded quantum walk,
+               Can a physics-grounded quantum walk,
               calibrated through a Schrödinger Bridge and driven by true entropy
               and measured resiliency, outperform classical stochastic models in
               replicating and executing real market dynamics?
             </p>
           </div>
-
-          <p className={`footline ${step >= 2 ? 'fade-in-delayed' : 'hidden'}`}>
-            Testable. Comparable. Physics-inspired.
-          </p>
+          {/* Footer removed to reduce clutter */}
         </div>
       );
     },
