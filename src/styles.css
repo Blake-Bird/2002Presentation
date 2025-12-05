@@ -385,8 +385,35 @@ body,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(0, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  gap: 12px; /* Reduced gap slightly */
+  margin-top: 16px;
+  height: calc(100% - 80px); /* Forces grid to fit remaining space */
+}
+
+
+/* Slide 7 RQ "Pop" */
+.rq-callout {
+  margin-top: 60px;
+  padding: 40px;
+  border-left: 5px solid #2ae3ff; /* Adds a nice accent bar */
+  background: linear-gradient(90deg, #2ae3ff11, transparent); /* Subtle backing */
+}
+
+.rq-callout p {
+  font-size: 2.8rem; /* Much bigger */
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  /* The "3D" Neon Glow Effect */
+  text-shadow: 0 0 20px rgba(42, 227, 255, 0.5), 
+               2px 2px 4px rgba(0,0,0,0.8); 
+}
+
+/* NEW: Constraint for Slide 10 images */
+.slide-10 .media-img {
+  max-height: 140px; /* Hard limit on height */
+  width: auto;       /* Width adjusts to maintain aspect ratio */
+  margin: 0 auto;    /* Centers the image if it shrinks */
 }
 
 .quad-card {
