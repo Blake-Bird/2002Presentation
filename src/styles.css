@@ -1,7 +1,4 @@
-/* ==========================================================================
-   GLOBAL RESET & ROOT
-   ========================================================================== */
-
+/* GLOBAL RESET */
 *,
 *::before,
 *::after {
@@ -21,17 +18,11 @@ body,
   color: #f5f7ff;
 }
 
-/* Optional wrapper if you use it elsewhere */
 .app-root {
   height: 100%;
   width: 100%;
 }
 
-/* ==========================================================================
-   PRESENTATION STAGE
-   ========================================================================== */
-
-.presentation-shell,
 .presentation {
   height: 100vh;
   width: 100vw;
@@ -39,20 +30,8 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  outline: none;
 }
 
-.presentation-stage {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Slide frame (16:9), clickable */
-.slide-frame,
 .slide {
   position: relative;
   width: 90vw;
@@ -71,20 +50,8 @@ body,
   height: 100%;
   width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Forward / backward slide change */
-.slide-frame.slide-forward {
-  animation: wipeRight 0.45s ease-out;
-}
-
-.slide-frame.slide-backward {
-  animation: wipeLeft 0.45s ease-out;
-}
-
-/* Optional little line at bottom if you want */
 .bottom-timeline {
   position: absolute;
   left: 0;
@@ -105,71 +72,27 @@ body,
   gap: 16px;
 }
 
-/* ==========================================================================
-   TITLES / HEADINGS / LAYOUT HELPERS
-   ========================================================================== */
-
-.nvda-slide {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Titles, subtitles */
+.slide-title-block {
+  margin-bottom: 16px;
 }
 
-/* Top bar: label + chip */
-.nvda-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 8px;
-}
-
-.nvda-label {
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #a0aec0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nvda-label-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #2ae3ff;
-  box-shadow: 0 0 12px rgba(42, 227, 255, 0.9);
-}
-
-.nvda-chip {
-  font-size: 11px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  border: 1px solid #2ae3ff44;
-  color: #e5f0ff;
-  background: #050814;
-}
-
-/* Heading row + title */
-.nvda-heading-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.nvda-heading {
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.slide-title {
   margin: 0;
+  font-size: 38px;
+  font-weight: 600;
 }
 
-/* Optional underline if you want to use it: */
+.slide-subtitle {
+  margin: 8px 0 0 0;
+  font-size: 22px;
+  color: #a0aec0;
+}
+
+.slide-subtitle.small {
+  font-size: 20px;
+}
+
 .title-underline {
   height: 3px;
   width: 40%;
@@ -178,49 +101,36 @@ body,
   border-radius: 999px;
 }
 
-.nvda-row {
+/* Layout helpers */
+.two-col {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+  height: calc(100% - 100px);
+}
+
+.two-col .col {
+  flex: 1;
+}
+
+.three-panel-row {
   display: flex;
   gap: 24px;
-  flex: 1;
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
-.nvda-col {
+.three-panel-row.equal .panel-card {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
-/* ==========================================================================
-   GLASS / CARD PANELS
-   ========================================================================== */
-
-.glass-panel,
 .panel-card,
 .model-card {
-  position: relative;
   flex: 1;
   background: #0c1324;
   border-radius: 12px;
   border: 1px solid #2ae3ff33;
   padding: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* smooth reveal when a step turns a panel on */
-.glass-panel.glass-reveal {
-  animation: zoomInSlow 0.7s ease-out forwards;
-}
-
-/* Slightly stronger glow if you mark emphasis */
-.glass-panel.emphasis {
-  border-color: #2ae3ff88;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.75);
 }
 
 .model-title {
@@ -234,10 +144,7 @@ body,
   color: #a0aec0;
 }
 
-/* ==========================================================================
-   GENERIC MEDIA FRAMES / PLACEHOLDERS
-   ========================================================================== */
-
+/* Generic media frames (real images) */
 .chart-placeholder,
 .image-placeholder {
   border-radius: 10px;
@@ -260,8 +167,7 @@ body,
   overflow: hidden;
 }
 
-.media-img,
-.placeholder-img {
+.media-img {
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -275,319 +181,396 @@ body,
   height: 110px;
 }
 
-.chart-placeholder.bars,
+.chart-placeholder.bars {
+  height: 220px;
+}
+
 .chart-placeholder.grid {
   height: 220px;
 }
 
-/* ==========================================================================
-   CHART GRID / GRAPH ELEMENTS
-   ========================================================================== */
-
-.nvda-chart {
-  flex: 1;
-  min-height: 0;
-  border-radius: 10px;
-  background: #050814;
-  border: 1px solid #1f2933;
-  overflow: hidden;
-  position: relative;
-}
-
-.nvda-chart-canvas {
-  position: absolute;
-  inset: 10px 14px 14px 14px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Subtle grid */
-.nvda-chart::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.6) 1px, transparent 1px);
-  background-size: 28px 28px;
-  opacity: 0.22;
-  pointer-events: none;
-}
-
-/* Line path */
-.graph-line {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.graph-line-path {
-  position: absolute;
-  inset: 25% 4% 24% 4%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #2ae3ff, #2ae3ff);
-  transform-origin: left center;
-  transform: scaleX(0);
-}
-
-.anim-graph-draw {
-  animation: wipeRight 1s ease-out forwards;
-}
-
-/* Points */
-.graph-point {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: radial-gradient(circle at center, #bbf7d0, #2ae3ff);
-  box-shadow: 0 0 12px rgba(42, 227, 255, 0.8);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.4);
-}
-
-.graph-point.visible {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-/* Scatter */
-.scatter-layer {
-  position: absolute;
-  inset: 20% 10%;
-}
-
-.scatter-dot {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: radial-gradient(circle at center, #38bdf8, #0ea5e9);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.4);
-}
-
-.scatter-dot.anim-data-bloom {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-.data-line-overlay {
-  position: absolute;
-  inset: 22% 10%;
-  background: linear-gradient(90deg, #2ae3ff, #2ae3ff);
-  border-radius: 999px;
-  opacity: 0;
-  transform-origin: left center;
-  transform: scaleX(0.2);
-}
-
-/* Bar chart */
-.nvda-bar-chart {
-  position: relative;
-  width: 100%;
-  height: 100%;
+/* Slide 1 specifics */
+.slide-1-main {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 10px 16px 12px 16px;
+  gap: 32px;
+  margin-top: 24px;
+  height: calc(100% - 140px);
 }
 
-.bar-column {
+.slide-1-left,
+.slide-1-right {
   flex: 1;
-  margin: 0 2px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.bar-shell {
-  width: 100%;
-  border-radius: 999px;
-  background: #050814;
-  overflow: hidden;
-  position: relative;
-}
-
-.bar-fill {
-  width: 100%;
-  border-radius: 999px;
-  background: linear-gradient(180deg, #2ae3ff, #107a94);
-  height: 0%;
-  transform-origin: bottom center;
-}
-
-.bar-fill.hot {
-  background: linear-gradient(180deg, #ffc857, #b7791f);
-}
-
-.bar-fill.normal {
-  /* same animation as hot, different colors */
-}
-
-.bar-fill.hot,
-.bar-fill.normal {
-  animation: barRise 0.75s ease-out forwards;
-}
-
-.bar-year {
-  margin-top: 4px;
-  font-size: 11px;
-  text-align: center;
-  color: #a0aec0;
-}
-
-/* ==========================================================================
-   TIMELINE STRIP (PROCESS)
-   ========================================================================== */
-
-.timeline-strip {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: #0c1324;
-  border: 1px solid #2ae3ff33;
-}
-
-.timeline-node {
-  position: relative;
-  flex: 1;
-  text-align: center;
-  font-size: 11px;
-  color: #a0aec0;
-}
-
-.timeline-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  margin: 0 auto 4px auto;
-  background: #2d3748;
-}
-
-.timeline-dot.active {
-  background: #2ae3ff;
-  box-shadow: 0 0 10px rgba(42, 227, 255, 0.8);
-}
-
-.timeline-sweep {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: 3px;
-  width: 0%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #2ae3ff, #2ae3ff);
-  transform: translateY(-50%);
-}
-
-.anim-timeline-sweep {
-  animation: timelineSweep 1s ease-out forwards;
-}
-
-/* ==========================================================================
-   STATS / TEXT ELEMENTS
-   ========================================================================== */
-
-.stat-number {
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.stat-number-sub {
-  font-size: 12px;
-  color: #a0aec0;
-}
-
-/* halo wrapper for big numbers (2030) */
-.halo-wrap {
-  position: relative;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.halo-ring {
+.double-slit,
+.order-book {
+  width: 100%;
+  height: 100%;
+}
+
+/* Assumptions (slide 2) */
+.assumptions-box {
+  background: #0c1324;
+  border-radius: 12px;
+  border: 1px solid #2ae3ff;
+  padding: 16px 18px;
+}
+
+.assumption-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+}
+
+.assumption-list li {
+  margin-bottom: 6px;
+  font-size: 20px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.assumption-list li::before {
+  content: '';
   position: absolute;
-  width: 120%;
-  height: 120%;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 999px;
-  border: 1px solid #2ae3ff88;
-  box-shadow: 0 0 18px rgba(42, 227, 255, 0.8);
-  opacity: 0;
-  transform: scale(0.7);
+  background: #2ae3ff;
+  box-shadow: 0 0 10px rgba(42, 227, 255, 0.8);
 }
 
-.anim-halo .halo-ring {
-  animation: zoomIn 0.45s ease-out forwards;
+/* Bands (slide 3) */
+.bands-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* Chips row */
-.interactive-strip {
+.band {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-top: 1px solid #ffc85744;
+  border-bottom: 1px solid #2ae3ff33;
+}
+
+.band-left {
+  width: 30%;
+}
+
+.band-right {
+  flex: 1;
+}
+
+/* Density matrix styling */
+.matrix-card {
+  position: relative;
+  border-radius: 10px;
+  background: radial-gradient(circle at top, #151a2d, #050814);
+  border: 1px solid #2ae3ff;
+  padding: 14px 14px 12px 14px;
+  font-family: 'SF Mono', 'JetBrains Mono', Menlo, Monaco, monospace;
+  font-size: 16px;
+}
+
+.matrix-card.small {
+  font-size: 14px;
+}
+
+.matrix-card.small.faded {
+  opacity: 0.55;
+}
+
+.matrix-title {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-size: 16px;
+  color: #a0aec0;
+}
+
+.matrix-2x2 {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+  text-align: center;
+}
+
+.matrix-2x2.tiny {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.icon-card {
+  border-radius: 10px;
+  background: #0c1324;
+  border: 1px solid #ffc857aa;
+  padding: 10px;
+  text-align: center;
+}
+
+.matrix-compare {
+  display: flex;
+  gap: 12px;
+}
+
+.equation {
+  font-size: 24px;
+  margin-bottom: 4px;
+  font-family: 'SF Mono', 'JetBrains Mono', Menlo, Monaco, monospace;
+}
+
+/* Mapping table (slide 4) */
+.mapping-table {
+  margin-top: 24px;
+}
+
+.mapping-header {
+  display: grid;
+  grid-template-columns: 1.5fr 0.2fr 1.5fr;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.mapping-col-header {
+  font-weight: 600;
+}
+
+.mapping-col-header.cyan {
+  color: #2ae3ff;
+}
+
+.mapping-col-header.gold {
+  color: #ffc857;
+  text-align: right;
+}
+
+.mapping-rows {
+  border-radius: 12px;
+  background: #0c1324;
+  padding: 8px 12px;
+}
+
+.mapping-row {
+  display: grid;
+  grid-template-columns: 1.5fr 0.2fr 1.5fr;
+  padding: 4px 0;
+  font-size: 20px;
+}
+
+.mapping-row + .mapping-row {
+  border-top: 1px solid #2d374833;
+}
+
+.row-muted {
+  color: #a0aec0aa;
+}
+
+.row-highlight {
+  color: #f5f7ff;
+}
+
+/* Quad grid (slide 10) */
+.quad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.quad-card {
+  background: #0c1324;
+  border-radius: 12px;
+  border: 1px solid #2ae3ff44;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quad-card h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.quad-tag {
+  font-size: 14px;
+  color: #ffc857;
+}
+
+/* Pipeline (slide 11) */
+.pipeline {
+  position: relative;
+  margin-top: 24px;
+  padding-left: 40px;
+}
+
+.pipeline-line {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(#2ae3ff, #2ae3ff);
+  border-radius: 999px;
+}
+
+.pipeline-box {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: #0c1324;
+  border-radius: 10px;
+  border: 1px solid #2ae3ff44;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.pipeline-box h2 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+}
+
+/* Flow nodes (DTQW) */
+.dtqw-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  min-width: 90px;
+  text-align: center;
   padding: 10px 12px;
   border-radius: 999px;
+  background: radial-gradient(circle at top, #1f2933, #050814);
+  border: 1px solid #2ae3ff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.flow-arrow {
+  font-size: 24px;
+  color: #2ae3ff;
+}
+
+/* Equation card (slide 8) */
+.equation-card {
   background: #0c1324;
-  border: 1px solid #2ae3ff33;
+  border-radius: 12px;
+  border: 1px solid #2ae3ff;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+  font-family: 'SF Mono', 'JetBrains Mono', Menlo, Monaco, monospace;
 }
 
-.interactive-pill {
-  padding: 7px 14px;
-  border-radius: 999px;
+.equation-main {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.equation-caption {
+  font-size: 16px;
+  color: #a0aec0;
+}
+
+/* SB stages (slide 9) */
+.three-stage-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.stage-card {
+  flex: 1;
+  background: #0c1324;
+  border-radius: 12px;
   border: 1px solid #2ae3ff44;
-  background: #050814;
-  font-size: 12px;
-  color: #e5f7ff;
-  min-width: 74px;
-  text-align: center;
-  transition:
-    transform 0.15s ease-out,
-    box-shadow 0.15s ease-out,
-    border-color 0.15s ease-out,
-    background 0.15s ease-out;
+  padding: 14px;
 }
 
-@media (pointer: fine) {
-  .interactive-pill:hover {
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    border-color: #2ae3ffcc;
-    background: radial-gradient(circle at top, #1b2136, #050814);
-  }
+.stage-card.sb {
+  border-color: #ffc857aa;
 }
 
-/* Worlds (history vs forecast, used on a few slides) */
-.world-layer {
+.constraint-row {
+  margin-top: 18px;
+  display: flex;
+  gap: 24px;
+  font-size: 18px;
+}
+
+/* Limitations */
+.limitations-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.limitations-list li {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+/* Quote box */
+.quote-box {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #0c1324;
+  border: 1px solid #ffc857aa;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.signature {
   position: absolute;
-  inset: 10px 14px 14px 14px;
-  border-radius: 10px;
-  overflow: hidden;
-  opacity: 0;
+  right: 32px;
+  bottom: 32px;
+  font-size: 16px;
+  color: #a0aec0;
 }
 
-.world-layer.history {
-  background: radial-gradient(circle at center, #1b2136, #050814);
+/* Footline */
+.footline {
+  position: absolute;
+  left: 40px;
+  bottom: 32px;
+  font-size: 18px;
+  color: #a0aec0;
 }
 
-.world-layer.forecast {
-  background: radial-gradient(circle at center, #102a43, #050814);
+/* Timeline & resources */
+.timeline-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+  font-size: 16px;
 }
 
-.anim-world-history,
-.anim-world-forecast {
-  animation: fadeInPlain 0.45s ease-out forwards;
+.timeline-list li {
+  margin-bottom: 6px;
 }
 
-/* ==========================================================================
-   QUESTIONS CARD (SLIDE 17 STYLE)
-   ========================================================================== */
+/* References */
+.references-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.4;
+}
 
+/* Questions slide */
 .questions-card {
   margin-top: 64px;
   margin-inline: auto;
@@ -613,10 +596,7 @@ body,
   color: #cbd5f5;
 }
 
-/* ==========================================================================
-   COLOR HELPERS
-   ========================================================================== */
-
+/* COLORS */
 .cyan {
   color: #2ae3ff;
 }
@@ -627,31 +607,13 @@ body,
   color: #38b2ac;
 }
 
-/* ==========================================================================
-   VISIBILITY / STEP HELPERS
-   ========================================================================== */
-
+/* ANIMATION UTILITIES */
 .hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.layer-rise {
-  animation: wipeUp 0.45s ease-out forwards;
-}
-
-.layer-rise-delayed {
-  animation: wipeUp 0.45s 0.2s ease-out forwards;
-}
-
-.layer-float {
-  animation: zoomIn 0.45s ease-out forwards;
-}
-
-/* ==========================================================================
-   KEYFRAMES & ANIMATION UTILITIES
-   ========================================================================== */
-
+/* Keyframes */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -731,21 +693,27 @@ body,
   }
 }
 
-@keyframes barRise {
-  0% {
-    height: 0%;
+@keyframes typeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  100% {
-    height: var(--bar-target, 70%);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes timelineSweep {
-  0% {
-    width: 0%;
+@keyframes wipeDown {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
   }
-  100% {
-    width: 100%;
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
   }
 }
 
@@ -758,7 +726,7 @@ body,
   }
 }
 
-/* convenience classes if you want to hook directly */
+/* Classes hooking into keyframes */
 .fade-in {
   animation: fadeIn 0.4s ease-out forwards;
 }
@@ -795,28 +763,10 @@ body,
   animation: zoomInSlow 0.7s ease-out forwards;
 }
 
-/* ==========================================================================
-   RESPONSIVE TWEAKS
-   ========================================================================== */
-
-@media (max-width: 1100px) {
-  .slide-frame,
-  .slide {
-    padding: 24px 26px;
-  }
-
-  .nvda-heading {
-    font-size: 24px;
-  }
-
-  .stat-number {
-    font-size: 26px;
-  }
+.type-in {
+  animation: typeIn 0.45s ease-out forwards;
 }
 
-@media (max-width: 860px) {
-  .nvda-row {
-    flex-direction: column;
-    height: auto;
-  }
+.wipe-down {
+  animation: wipeDown 0.4s ease-out forwards;
 }
