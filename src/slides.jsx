@@ -61,6 +61,117 @@ export const slides = [
     },
   },
 
+  // NEW SLIDE 2 – Definition: Open vs Closed
+  {
+    id: 1.1,
+    maxStep: 5,
+    render(step) {
+      return (
+        <div className="slide-2-new">
+          <div className="slide-title-block">
+            <h1 className={`slide-title ${step >= 1 ? 'fade-in' : 'hidden'}`}>
+              The Physics of Information: Open vs. Closed Systems
+            </h1>
+          </div>
+
+          <div className="two-col">
+            {/* Left: The Textbook View */}
+            <div className={`col panel-card ${step >= 2 ? 'fade-in-up' : 'hidden'}`}>
+              <h2 className="model-title teal">Closed System (Textbook)</h2>
+              <div className="icon-card has-img" style={{height: '180px'}}>
+                 {/* Placeholder for an atom or sealed box */}
+                 <div style={{fontSize: '60px'}}>⚛️</div>
+              </div>
+              <ul className="assumption-list" style={{fontSize: '18px'}}>
+                <li>Isolated from environment.</li>
+                <li><strong>Unitary Evolution</strong> (Reversible).</li>
+                <li>Schrödinger Eq: <span className="equation">iħ ∂ψ/∂t = Hψ</span></li>
+                <li style={{color: '#ff5757'}}>Fail: Cannot describe a market.</li>
+              </ul>
+            </div>
+
+            {/* Right: The Reality */}
+            <div className={`col panel-card ${step >= 3 ? 'fade-in-up' : 'hidden'}`}>
+              <h2 className="model-title cyan">Open System (Reality)</h2>
+              <div className="icon-card has-img" style={{height: '180px'}}>
+                 {/* Placeholder for a box with arrows in/out */}
+                 <div style={{fontSize: '60px'}}>🌊 ↔️ 📦</div>
+              </div>
+              <ul className="assumption-list" style={{fontSize: '18px'}}>
+                <li>Interacts with "Bath" (News/Liquidity).</li>
+                <li><strong>Dissipative</strong> (Info is lost/gained).</li>
+                <li>Master Eq: <strong>Lindblad / Kraus</strong>.</li>
+                <li style={{color: '#2ae3ff'}}>Success: Matches noisy data.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <p className={`footline ${step >= 5 ? 'fade-in-delayed' : 'hidden'}`}>
+             A stock market is a macroscopic Open Quantum System. It has memory, interference, and decay.
+          </p>
+        </div>
+      );
+    },
+  },
+
+  // NEW SLIDE 3 – History/Tools
+  {
+    id: 1.3,
+    maxStep: 4,
+    render(step) {
+      return (
+        <div className="slide-3-new">
+          <div className="slide-title-block">
+            <h1 className={`slide-title ${step >= 1 ? 'fade-in' : 'hidden'}`}>
+              Bridging the Gap: 1931 to 1971
+            </h1>
+            <p className={`slide-subtitle ${step >= 1 ? 'fade-in-delayed' : 'hidden'}`}>
+              We use two historic tools to model this "Macroscopic Interference."
+            </p>
+          </div>
+
+          <div className="two-col">
+            {/* Tool 1: Schrodinger */}
+            <div className={`col ${step >= 2 ? 'wipe-right' : 'hidden'}`}>
+              <div className="model-card" style={{borderColor: '#ffc857'}}>
+                <h2 className="model-title gold">1. Schrödinger Bridge (1931)</h2>
+                <div className="chart-placeholder tiny has-img">
+                   {/* Visualization of gas diffusion */}
+                   <span style={{fontSize:'40px'}}>☁️ ↝ ☁️</span>
+                </div>
+                <p className="panel-caption">
+                  "If I know where a gas started and ended, what is the <em>most likely path</em>?"
+                </p>
+                <p className="panel-caption" style={{color: '#fff'}}>
+                  <strong>Use:</strong> Forcing the quantum walk to match real price history.
+                </p>
+              </div>
+            </div>
+
+            {/* Tool 2: Kraus */}
+            <div className={`col ${step >= 3 ? 'wipe-left' : 'hidden'}`}>
+              <div className="model-card" style={{borderColor: '#2ae3ff'}}>
+                <h2 className="model-title cyan">2. Kraus Operators (1971)</h2>
+                <div className="chart-placeholder tiny has-img">
+                   {/* Visualization of measurement */}
+                   <span style={{fontSize:'40px'}}>👁️ ➔ 📉</span>
+                </div>
+                <p className="panel-caption">
+                  Generalized measurement. Not just "Up/Down," but "Partial Collapse."
+                </p>
+                <p className="panel-caption" style={{color: '#fff'}}>
+                  <strong>Use:</strong> Modeling trades that don't fully drain liquidity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    },
+  },
+  
+  
+  
   // SLIDE 2 – Classical Probability
   {
     id: 2,
@@ -647,56 +758,7 @@ export const slides = [
     },
   },
 
-  // SLIDE 12 – Expected Results / Fits
-  {
-    id: 12,
-    maxStep: 4,
-    render(step) {
-      return (
-        <div className="slide-12">
-          <div className="slide-title-block">
-            <h1 className={`slide-title ${step >= 1 ? 'fade-in' : 'hidden'}`}>
-              Expected Fit Profile: Quantum vs Classical
-            </h1>
-          </div>
-
-          <div className="two-col">
-            <div className="col">
-              <div
-                className={`chart-placeholder bars has-img ${
-                  step >= 2 ? 'wipe-up' : 'hidden'
-                }`}
-              >
-                <img
-                  src="/img/slide12_fit_bars.png"
-                  alt="Expected fit bar chart"
-                  className="media-img"
-                />
-              </div>
-            </div>
-            <div className="col">
-              <div
-                className={`chart-placeholder grid has-img ${
-                  step >= 3 ? 'fade-in' : 'hidden'
-                }`}
-              >
-                <img
-                  src="/img/slide12_fit_grid.png"
-                  alt="Expected fit 2x2 grid"
-                  className="media-img"
-                />
-              </div>
-            </div>
-          </div>
-
-          <p className={`footline ${step >= 4 ? 'fade-in-delayed' : 'hidden'}`}>
-            Hypothesis: the quantum walk + SB matches all four signatures
-            simultaneously with lower KL cost than any classical baseline.
-          </p>
-        </div>
-      );
-    },
-  },
+  
 
   // SLIDE 13 – Limitations, Risks, Future Work
   {
