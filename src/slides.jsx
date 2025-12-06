@@ -79,8 +79,12 @@ export const slides = [
             <div className={`col panel-card ${step >= 2 ? 'fade-in-up' : 'hidden'}`}>
               <h2 className="model-title teal">Closed System (Textbook)</h2>
               <div className="icon-card has-img" style={{height: '180px'}}>
-                 {/* Placeholder for an atom or sealed box */}
-                 <div style={{fontSize: '60px'}}>⚛️</div>
+                 {/* REPLACED EMOJI WITH IMG */}
+                 <img 
+                   src="/img/slide2_closed.png" 
+                   alt="Particle in a box illustration" 
+                   className="media-img"
+                 />
               </div>
               <ul className="assumption-list" style={{fontSize: '18px'}}>
                 <li>Isolated from environment.</li>
@@ -94,8 +98,12 @@ export const slides = [
             <div className={`col panel-card ${step >= 3 ? 'fade-in-up' : 'hidden'}`}>
               <h2 className="model-title cyan">Open System (Reality)</h2>
               <div className="icon-card has-img" style={{height: '180px'}}>
-                 {/* Placeholder for a box with arrows in/out */}
-                 <div style={{fontSize: '60px'}}>🌊 ↔️ 📦</div>
+                 {/* REPLACED EMOJI WITH IMG */}
+                 <img 
+                   src="/img/slide2_open.png" 
+                   alt="Open system bath interaction" 
+                   className="media-img"
+                 />
               </div>
               <ul className="assumption-list" style={{fontSize: '18px'}}>
                 <li>Interacts with "Bath" (News/Liquidity).</li>
@@ -116,7 +124,7 @@ export const slides = [
 
   // NEW SLIDE 3 – History/Tools
   {
-    id: 1.3,
+    id: 1.4,
     maxStep: 4,
     render(step) {
       return (
@@ -136,8 +144,12 @@ export const slides = [
               <div className="model-card" style={{borderColor: '#ffc857'}}>
                 <h2 className="model-title gold">1. Schrödinger Bridge (1931)</h2>
                 <div className="chart-placeholder tiny has-img">
-                   {/* Visualization of gas diffusion */}
-                   <span style={{fontSize:'40px'}}>☁️ ↝ ☁️</span>
+                    {/* REPLACED EMOJI WITH IMG */}
+                    <img 
+                       src="/img/slide3_bridge.png" 
+                       alt="Schrodinger Bridge diffusion path" 
+                       className="media-img"
+                    />
                 </div>
                 <p className="panel-caption">
                   "If I know where a gas started and ended, what is the <em>most likely path</em>?"
@@ -153,8 +165,12 @@ export const slides = [
               <div className="model-card" style={{borderColor: '#2ae3ff'}}>
                 <h2 className="model-title cyan">2. Kraus Operators (1971)</h2>
                 <div className="chart-placeholder tiny has-img">
-                   {/* Visualization of measurement */}
-                   <span style={{fontSize:'40px'}}>👁️ ➔ 📉</span>
+                    {/* REPLACED EMOJI WITH IMG */}
+                    <img 
+                       src="/img/slide3_kraus.png" 
+                       alt="Kraus operator measurement diagram" 
+                       className="media-img"
+                    />
                 </div>
                 <p className="panel-caption">
                   Generalized measurement. Not just "Up/Down," but "Partial Collapse."
@@ -954,6 +970,37 @@ export const slides = [
               </ul>
             </div>
           </div>
+        </div>
+      );
+    },
+  },
+
+
+  // NEW SLIDE – Full Screen Visual (No Title)
+  {
+    id: 15.67, // REMEMBER TO CHANGE THIS ID
+    maxStep: 1,
+    render(step) {
+      return (
+        <div style={{
+          width: '100%', 
+          height: '100%', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center'
+        }}>
+          <img
+            src="/img/YOUR_BIG_IMAGE_HERE.png"
+            alt="Full screen visual"
+            className={step >= 1 ? 'zoom-in' : 'hidden'}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'contain', // Ensures the whole image is seen without cropping
+              borderRadius: '12px',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)' // Deep shadow for depth
+            }}
+          />
         </div>
       );
     },
