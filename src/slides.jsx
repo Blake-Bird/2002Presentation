@@ -818,6 +818,64 @@ export const slides = [
     },
   },
 
+  // REVISED SLIDE 14 – Implications / Physics Scale
+  {
+    id: 13.5,
+    maxStep: 5,
+    render(step) {
+      return (
+        <div className="slide-14-revised">
+          <div className="slide-title-block">
+            <h1 className={`slide-title ${step >= 1 ? 'fade-in' : 'hidden'}`}>
+              Filling the Gap in Mesoscopic Physics
+            </h1>
+          </div>
+
+          <div className="three-panel-row" style={{alignItems: 'center'}}>
+            
+            {/* Micro */}
+            <div className={`panel-card ${step >= 2 ? 'fade-in-up' : 'hidden'}`} style={{opacity: 0.6}}>
+              <h2 className="model-title">Microscopic</h2>
+              <div className="chart-placeholder tiny has-img">⚛️</div>
+              <p className="panel-caption">Quantum Mechanics<br/>(Atoms, Photons)</p>
+            </div>
+
+            {/* The Arrow */}
+            <div className={`flow-arrow ${step >= 3 ? 'wipe-right' : 'hidden'}`} style={{fontSize:'40px'}}>?</div>
+
+            {/* MESO (The Gap) */}
+            <div className={`panel-card ${step >= 3 ? 'zoom-in' : 'hidden'}`} style={{border: '2px solid #2ae3ff', transform: 'scale(1.1)'}}>
+              <h2 className="model-title cyan">Mesoscopic</h2>
+              <div className="chart-placeholder tiny has-img">📊</div>
+              <p className="panel-caption" style={{color: '#fff'}}>
+                <strong>Complex Information Systems</strong><br/>
+                (Markets, Neural Nets, Flocks)
+              </p>
+            </div>
+
+            {/* The Arrow */}
+            <div className={`flow-arrow ${step >= 3 ? 'wipe-right' : 'hidden'}`} style={{fontSize:'40px'}}>→</div>
+
+            {/* Macro */}
+            <div className={`panel-card ${step >= 4 ? 'fade-in-up' : 'hidden'}`} style={{opacity: 0.6}}>
+              <h2 className="model-title">Macroscopic</h2>
+              <div className="chart-placeholder tiny has-img">🍎</div>
+              <p className="panel-caption">Classical Mechanics<br/>(Newton's Cradle, Gravity)</p>
+            </div>
+
+          </div>
+
+          <div className={`quote-box ${step >= 5 ? 'fade-in-up' : 'hidden'}`} style={{marginTop: '40px'}}>
+            <p style={{fontSize: '20px'}}>
+              "Regardless of Alpha, this project tests if Quantum Probability is the correct language for <strong>Macroscopic Complexity</strong>."
+            </p>
+          </div>
+        </div>
+      );
+    },
+  },
+  
+
   // SLIDE 14 – Conclusion
   {
     id: 14,
